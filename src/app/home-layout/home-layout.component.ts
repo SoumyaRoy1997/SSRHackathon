@@ -26,11 +26,12 @@ export class HomeLayoutComponent implements OnInit {
   fliteredFlight: Flights[];
   filter = true;
   flightID = [];
-  passenger = [];
+  serviceList = [];
   barchart = [];
   currentDate = new Date();
   today: string;
   dataSource : any
+  example = 'Hi'
  
   constructor(private router: Router,
               public dialog: MatDialog,
@@ -63,7 +64,8 @@ export class HomeLayoutComponent implements OnInit {
             console.log(this.Flight);
             this.Flight.forEach(value => {
               this.flightID.push(value.flightId);
-              this.passenger.push(value.passengers);
+              if(value.specialservice)
+              this.serviceList.push(value.specialservice.serviceName)
             });
             this.resultsLength = this.Flight.length;
             this.dataSource = new MatTableDataSource<Flights>(this.Flight);

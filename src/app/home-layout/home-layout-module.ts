@@ -7,11 +7,13 @@ import { HomeLayoutRoutingModule } from './home-layout-routing.module';
 import { HomeLayoutComponent } from './home-layout.component';
 import { SsrService } from '../service/ssr.service';
 import { FirebaseService } from '../service/firebase.service';
+import {ArrayToStringPipe} from '../common/array-to-string.pipe';
 
 @NgModule({
     declarations: [
       SsrFormComponent,
-      HomeLayoutComponent
+      HomeLayoutComponent,
+      ArrayToStringPipe
     ],
     imports: [
       RouterModule,
