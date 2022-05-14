@@ -1,0 +1,17 @@
+<p>Hi User!</p>
+<p>You have selected these SSR's</p>
+<form [formGroup]="ssrForm">
+    <section class="example-section">
+    <ng-template ngFor let-item [ngForOf]="filterFields" let-i="index" >
+        <span class="example-list-section">
+            <mat-checkbox class="example-margin"
+                          [checked]="allComplete"
+                          [color]="black">
+              {{filterFields[i].SSR}}
+            </mat-checkbox><br>
+          </span>
+        <!-- <label for="filterFields[i].SSR">{{filterFields[i].SSR}}</label>
+        <input id="filterFields[i].SSR" type="text" [formControlName]="filterFields[i].SSR"> -->
+      </ng-template>
+      </section>
+</form>

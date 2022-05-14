@@ -1,0 +1,384 @@
+[{
+    "SSR": "DIPB",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Diplomatic Baggage"
+},
+{
+    "SSR": "DIPL",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Diplomatic Courier"
+},
+{
+    "SSR": "BAGN",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Bag Number/Station Use Only - Automatically added when recheck message is sent through PBT"
+},
+{
+    "SSR": "CHLD",
+    "Airline": "​",
+    "Remarks": "MAN",
+    "Details": "Passenger is a child. Required on all flights. Ages 2-14 on DL, Ages 2-12 on OAL. Include Date of Birth."
+},
+{
+    "SSR": "JTOP",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Automatically added when a codeshare flight is booked in a PNR. This SSR entry cannot be changed or removed. It may remain in the reservation even after the segment has been cancelled but it will not affect the reservation in any way."
+},
+{
+    "SSR": "NUBZ",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "New Business - Customers included in promotional programs to try Delta"
+},
+{
+    "SSR": "VIPS",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Premium Services VIP passenger"
+},
+{
+    "SSR": "CCAR",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Chauffeured Car Service (Delta One™ JFK/LAX-LHR)"
+},
+{
+    "SSR": "EMFT",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Authorization only by Family Assistance Center (FAC) for family members in association with an aircraft accident"
+},
+{
+    "SSR": "VPES",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Certified emergency medical provider - Voluntary Provisions of Emergency Services Program"
+},
+{
+    "SSR": "FQTR",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Frequent Traveler Free Award Redemption"
+},
+{
+    "SSR": "DBLE",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Double Mileage Certificate Required (SkyChoice Award)"
+},
+{
+    "SSR": "AUTH",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "International Upgrade Authorization from Marketing Dept."
+},
+{
+    "SSR": "ITUP",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "International Upgrade Authorization from Marketing Dept."
+},
+{
+    "SSR": "CERT",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Records paper upgrade certificate was lifted."
+},
+{
+    "SSR": "UPGR",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Internally generated when RP/OP class booked and CERT required to be presented at FTO"
+},
+{
+    "SSR": "FQTS",
+    "Airline": "OA",
+    "Remarks": "NO",
+    "Details": "Frequent traveler service"
+},
+{
+    "SSR": "FQTU",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Complimentary Medallion Upgrade (RU/OU) requested. Automatically generated when coach segment is booked."
+},
+{
+    "SSR": "OAID",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "OAL Frequent Traveler Program Level"
+},
+{
+    "SSR": "CRUZ",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Passengers Traveling on Cruise bookings"
+},
+{
+    "SSR": "ITIP",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "International to International (ITI) passenger"
+},
+{
+    "SSR": "HTEL",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Hotel Confirmed - Used for IROP handling - Specify Details"
+},
+{
+    "SSR": "GRND",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Ground Transportation Confirmed - Used for IROP handling - Specify Details"
+},
+{
+    "SSR": "LEOS",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Law Enforcement Officer (Automatically added when MDLEO template used at FTO)"
+},
+{
+    "SSR": "ESCT",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Escorted Prisoner"
+},
+{
+    "SSR": "INAD",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Inadmissible Passenger"
+},
+{
+    "SSR": "FXXO",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "FFDO Armed Pilot on board"
+},
+{
+    "SSR": "NRPS",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "DL employees traveling on Positive Space Company Business"
+},
+{
+    "SSR": "NRSB",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Nonrevenue Standby"
+},
+{
+    "SSR": "WSPN",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Worldspan/TravelPort Business Travel on DL"
+},
+{
+    "SSR": "NRCC",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Connection Carrier Nonrevs traveling on their own carrier"
+},
+{
+    "SSR": "DSSR",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Customer with disability requesting a seat accommodation. Document seat assigned, type of seat, and why requested."
+},
+{
+    "SSR": "PNUT",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Customer is allergic to peanuts"
+},
+{
+    "Details": "4SSRPNUTDLSS1*N1S1*PEANUT ALLERGY ADVD"
+},
+{
+    "Details": "4SSRPNUTDLSS1*N1S1*UNA TO GUARANTEE PFF (Peanut Free Flight)"
+},
+{
+    "SSR": "WCBB",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Wet Cell Battery Box requested"
+},
+{
+    "SSR": "NAME",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Name change caused by segment status change"
+},
+{
+    "SSR": "RLOC",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Record Locator"
+},
+{
+    "SSR": "RSST",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Seat restricted/Judgment (Automatically added when judgment/restricted seat assigned) To be used when other restricted seat SSRs (WCHR, WCHS, etc.) are not applicable."
+},
+{
+    "SSR": "EXIT",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Exit Row Seat (Automatically added when exit row seat assigned)"
+},
+{
+    "SSR": "SECU",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "Failed security questions"
+},
+{
+    "SSR": "AVML",
+    "Airline": "24 HRS",
+    "Remarks": "NO",
+    "Details": "Asian Vegetarian"
+},
+{
+    "SSR": "BBML",
+    "Airline": "24 HRS",
+    "Remarks": "NO",
+    "Details": "Baby - Currently not offered on DL "
+},
+{
+    "SSR": "BLML",
+    "Airline": "24 HRS",
+    "Remarks": "OPT",
+    "Details": "Bland/Soft"
+},
+{
+    "SSR": "CHML/TDML",
+    "Airline": "24 HRS",
+    "Remarks": "NO",
+    "Details": "Child/Toddler - Currently not offered on DL "
+},
+{
+    "SSR": "DBML",
+    "Airline": "24 HRS",
+    "Remarks": "NO",
+    "Details": "Diabetic"
+},
+{
+    "SSR": "GFML",
+    "Airline": "24 HRS",
+    "Remarks": "NO",
+    "Details": "Gluten Intolerant"
+},
+{
+    "SSR": "KSML",
+    "Airline": "24 HRS",
+    "Remarks": "NO",
+    "Details": "Kosher"
+},
+{
+    "SSR": "LSML",
+    "Airline": "24 HRS",
+    "Remarks": "NO",
+    "Details": "Low Sodium"
+},
+{
+    "SSR": "MOML",
+    "Airline": "24 HRS",
+    "Remarks": "NO",
+    "Details": "Muslim"
+},
+{
+    "SSR": "PSML",
+    "Airline": "24 HRS",
+    "Remarks": "OPT",
+    "Details": "Positive Space passenger (automatically added when PS PNR is built)"
+},
+{
+    "SSR": "VGML",
+    "Airline": "24 HRS",
+    "Remarks": "NO",
+    "Details": "Vegetarian (Non-Dairy)"
+},
+{
+    "SSR": "VLML​",
+    "Airline": "​24 HRS",
+    "Remarks": "​NO",
+    "Details": "​Vegetarian (Lacto-ovo)"
+},
+{
+    "SSR": "​HNML",
+    "Airline": "​24 HRS",
+    "Remarks": "​NO",
+    "Details": "​Hindu"
+},
+{
+    "SSR": "​LFML",
+    "Airline": "​24 HRS",
+    "Remarks": "​NO",
+    "Details": "​Low Fat/ Low Cholesterol/ Low Calorie"
+},
+{
+    "SSR": "UMNR",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Unaccompanied Minor (DL Only) - Specify Age (Automatically added via PUM template)"
+},
+{
+    "SSR": "TBBB",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "UMNR To Be Brought By information (Automatically added via PUM template)"
+},
+{
+    "SSR": "TBMB",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "UMNR To Be Met By information (Automatically added via PUM template)"
+},
+{
+    "SSR": "PCTC",
+    "Airline": "DL",
+    "Remarks": "OPT",
+    "Details": "DOT Passenger Contact Info present (Automatically added when PC* template completed)"
+},
+{
+    "SSR": "DOCS",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Passenger Primary Travel Document info"
+},
+{
+    "SSR": "DOCO",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Passenger Supplemental Travel Document info"
+},
+{
+    "SSR": "DOCA",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Passenger Travel Address info"
+},
+{
+    "SSR": "CDNT",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "​Passenger denied boarding due to no COVID-19 test taken"
+},
+{
+    "SSR": "CDWT",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Passenger denied boarding due to the wrong COVID-19 test for transit or entry into the destination"
+},
+{
+    "SSR": "CDET",
+    "Airline": "DL",
+    "Remarks": "MAN",
+    "Details": "Passenger denied boarding due to expired COVID-19 test for time limit required at transit or destination​"
+}]

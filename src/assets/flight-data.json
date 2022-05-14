@@ -1,0 +1,64 @@
+[
+	{
+		"specialservice": [
+			{
+				"serviceID": "DIPB",
+				"serviceName": "Diplomatic Baggage"
+			},
+            {
+				"serviceID": "CHLD",
+				"serviceName": "Passenger is a child. Required on all flights. Ages 2-14 on DL, Ages 2-12 on OAL. Include Date of Birth."
+			}
+		],
+		"arrival": "2020-03-30T12:30",
+		"company": "Delta Airlines",
+		"departure": "2020-03-30T10:30",
+		"destination": "Kolkata",
+		"flightId": "4028828371202f66017125e2127b00ae",
+		"pickup": "Bangalore"
+	},
+	{
+        "specialservice": [
+			{
+				"serviceID": "CHLD",
+				"serviceName": "Passenger is a child. Required on all flights. Ages 2-14 on DL, Ages 2-12 on OAL. Include Date of Birth."
+			}
+		],
+		"arrival": "2020-03-31T09:30",
+		"company": "Delta Airlines",
+		"departure": "2020-03-31T05:45",
+		"destination": "Kolkata",
+		"flightId": "4028828371202f66017125f14a3f00b3",
+		"pickup": "Bangalore"
+	},
+	{
+		"arrival": "2020-03-31T18:30",
+		"company": "Delta Airlines",
+		"departure": "2020-03-30T17:45",
+		"destination": "Chennai",
+		"flightId": "4028828371202f660171263c65c900b6",
+		"pickup": "Bangalore"
+	},
+	{
+		"arrival": "2020-03-31T18:30",
+		"company": "Delta Airlines",
+		"departure": "2020-03-29T17:45",
+		"destination": "Chennai",
+		"flightId": "4028828371202f660171263da3c300b7",
+		"pickup": "Bangalore"
+	},
+	{
+		"specialservice": [
+			{
+				"serviceID": "DIPB",
+				"serviceName": "Diplomatic Baggage"
+			}
+		],
+		"arrival": "2020-04-12T09:30",
+		"company": "Delta Airlines",
+		"departure": "2020-04-12T05:45",
+		"destination": "Kolkata",
+		"flightId": "2c9088567134b62c017134baa2dc0000",
+		"pickup": "Bangalore"
+	}
+]
