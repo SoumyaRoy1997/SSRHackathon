@@ -4,14 +4,17 @@ import { SsrFormComponent } from './ssr-form/ssr-form.component';
 
 const routes: Routes = [
   {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+  },{
     path: 'home',
     loadChildren: () => import('./home-layout/home-layout-module').then(m => m.HomeLayoutModule)
   },
   { path: '',
-  redirectTo: '/home',
+  redirectTo: '/login',
   pathMatch: 'full'
   },
-  { path: '**', loadChildren: () => import('./home-layout/home-layout-module').then(m => m.HomeLayoutModule) }
+  { path: '**', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) }
 ];
 
 @NgModule({

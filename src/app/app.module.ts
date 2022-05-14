@@ -13,6 +13,7 @@ import { environment } from 'src/environments/environment';
 import {AngularFireModule} from 'angularfire2';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import {LoginModule} from './login/login.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
     SharedModule,
     HttpClientModule,
     HomeLayoutModule,
+    LoginModule,
     AngularFireModule.initializeApp(environment.firebaseconfig, 'flight-app'),
     BrowserAnimationsModule
   ],

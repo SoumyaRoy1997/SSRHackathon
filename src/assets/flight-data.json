@@ -15,7 +15,8 @@
 		"departure": "2020-03-30T10:30",
 		"destination": "Kolkata",
 		"flightId": "4028828371202f66017125e2127b00ae",
-		"pickup": "Bangalore"
+		"pickup": "Bangalore",
+		"serviceList":""
 	},
 	{
         "specialservice": [
@@ -29,7 +30,8 @@
 		"departure": "2020-03-31T05:45",
 		"destination": "Kolkata",
 		"flightId": "4028828371202f66017125f14a3f00b3",
-		"pickup": "Bangalore"
+		"pickup": "Bangalore",
+		"serviceList":""
 	},
 	{
 		"arrival": "2020-03-31T18:30",
@@ -37,7 +39,8 @@
 		"departure": "2020-03-30T17:45",
 		"destination": "Chennai",
 		"flightId": "4028828371202f660171263c65c900b6",
-		"pickup": "Bangalore"
+		"pickup": "Bangalore",
+		"serviceList":""
 	},
 	{
 		"arrival": "2020-03-31T18:30",
@@ -45,7 +48,8 @@
 		"departure": "2020-03-29T17:45",
 		"destination": "Chennai",
 		"flightId": "4028828371202f660171263da3c300b7",
-		"pickup": "Bangalore"
+		"pickup": "Bangalore",
+		"serviceList":""
 	},
 	{
 		"specialservice": [
@@ -59,6 +63,7 @@
 		"departure": "2020-04-12T05:45",
 		"destination": "Kolkata",
 		"flightId": "2c9088567134b62c017134baa2dc0000",
-		"pickup": "Bangalore"
+		"pickup": "Bangalore",
+		"serviceList":""
 	}
 ]

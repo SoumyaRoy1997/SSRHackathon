@@ -9,6 +9,8 @@ import {Flights} from '../_helper/flight.model'
 import { FirebaseService } from '../service/firebase.service';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { stringify } from '@angular/compiler/src/util';
+import { SsrFormComponent } from '../ssr-form/ssr-form.component';
 
 
 @Component({
@@ -31,7 +33,8 @@ export class HomeLayoutComponent implements OnInit {
   currentDate = new Date();
   today: string;
   dataSource : any
-  example = 'Hi'
+  exampleData = new String( "" );
+  counter =0;
  
   constructor(private router: Router,
               public dialog: MatDialog,
@@ -61,12 +64,18 @@ export class HomeLayoutComponent implements OnInit {
     this.firebaseService.getFlights().subscribe(
           data => {
             this.Flight = data;
-            console.log(this.Flight);
             this.Flight.forEach(value => {
+              this.counter=0
               this.flightID.push(value.flightId);
-              if(value.specialservice)
-              this.serviceList.push(value.specialservice.serviceName)
-            });
+              if(value.specialservice){
+                value.serviceList.concat(stringify(value.specialservice.forEach(element => {
+                    element.serviceName
+                  })))
+                }
+              })
+              console.log(this.Flight);
+              // this.serviceList.push(value.specialservice.serviceName)
+
             this.resultsLength = this.Flight.length;
             this.dataSource = new MatTableDataSource<Flights>(this.Flight);
             this.isLoadingResults = false;
@@ -77,6 +86,17 @@ export class HomeLayoutComponent implements OnInit {
 
     routeSsr(){
       this.route.navigate(['./ssr-form'],{relativeTo: this.activatedRoute});
+    }
+
+    openSsrForm() {
+      const dialogRef = this.dialog.open(SsrFormComponent, {
+        width: 'auto',
+        data: {
+                flight:""
+             }});
+  
+      dialogRef.afterClosed().subscribe(result => {
+      });
     }
   }
   

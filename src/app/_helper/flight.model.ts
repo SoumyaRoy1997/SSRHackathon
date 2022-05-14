@@ -8,6 +8,6 @@ export interface Flights {
     destination: string;
     pickup: string;
     passengers: number;
-    specialservice: specialservice;
-    serviceList?:Array<String>
+    specialservice: specialservice[];
+    serviceList?:string
   }

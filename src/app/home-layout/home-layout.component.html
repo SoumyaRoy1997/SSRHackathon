@@ -34,7 +34,7 @@
                           Actions
                         </th>
               <td mat-cell *matCellDef="let Flight">
-                  <button mat-button  matTooltip="Book Flight" class="mat-raised-button mat-button-base btn btn-info" [routerLink]="['/home/ssr-form']"><span class="material-icons">
+                  <button mat-button  matTooltip="Book Flight" class="mat-raised-button mat-button-base btn btn-info" (click)="openSsrForm()"><span class="material-icons">
                     flight_takeoff
                     </span></button>
               </td>
@@ -51,7 +51,7 @@
                 <!-- <ng-container *ngIf="Flight.specialservice"><img src='{{ "../../assets/images/" + Flight.specialservice[i].serviceID + ".png" }}'>
                 </ng-container> -->
                 <!-- <mat-icon *ngIf="Flight.specialservice" svgIcon='{{Flight.specialservice[i].serviceID}}' matTooltip="{{Flight.specialservice[i].serviceName}}" style="padding-right: 1vw;"></mat-icon>   -->
-                <mat-icon *ngIf="Flight.specialservice"  svgIcon='SSR' matTooltip="{{serviceList | arrayToString}}" ></mat-icon>
+                <mat-icon *ngIf="Flight.specialservice"  svgIcon='SSR' matTooltip="1.Wheelchair&#010;2.Infant"  matTooltipClass="my-tooltip"></mat-icon>
                 <!-- <mat-icon *ngIf="!Flight.specialservice" class="red-icon" svgIcon='SSR' matTooltip="Service Request Not Available" ></mat-icon> -->
               <!-- </ng-template>   -->
               </td>
