@@ -15,37 +15,34 @@
       </mat-expansion-panel-header>
   
       <mat-form-field appearance="fill">
-        <mat-label>First name</mat-label>
-        <input matInput [ngModel]="currentUser.name">
+        <mat-label>Name</mat-label>
+        <input matInput #firstName>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Last name</mat-label>
-        <input matInput>
+        <mat-label>Gender</mat-label>
+        <input matInput #lastName>
       </mat-form-field>
-  
-      <mat-form-field appearance="fill">
-        <mat-label>DOB</mat-label>
-        <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-      
 
       <mat-form-field appearance="fill">
         <mat-label>Sky Miles Number</mat-label>
-        <input matInput>
+        <input matInput #skyMiles>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <input matInput #address>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
-        <input matInput>
+        <input matInput #email>
       </mat-form-field>
-
+      
       <mat-form-field appearance="fill">
         <mat-label>Phone Number</mat-label>
-        <input matInput>
+        <input matInput #phone>
       </mat-form-field>
-
       <mat-action-row>
         <button mat-button color="primary" (click)="nextStep()">Next</button>
       </mat-action-row>
@@ -79,42 +76,84 @@
             Passenger Details
           </mat-panel-title>
           <mat-panel-description>
-            Type the passenger information
+            Provide passenger information
             <mat-icon>account_circle</mat-icon>
           </mat-panel-description>
         </mat-expansion-panel-header>
+        <mat-form-field appearance="fill">
+            <mat-label>Name</mat-label>
+            <input matInput #firstName>
+          </mat-form-field>
     
-        <mat-form-field appearance="fill">
-          <mat-label>First name</mat-label>
-          <input matInput [ngModel]="currentUser.name">
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Last name</mat-label>
-          <input matInput>
-        </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Gender</mat-label>
+            <input matInput #lastName>
+          </mat-form-field>
     
-        <mat-form-field appearance="fill">
-          <mat-label>DOB</mat-label>
-          <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-form-field>
-        
+          <mat-form-field appearance="fill">
+            <mat-label>Sky Miles Number</mat-label>
+            <input matInput #skyMiles>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Address</mat-label>
+            <input matInput #address>
+          </mat-form-field>
   
-        <mat-form-field appearance="fill">
-          <mat-label>Sky Miles Number</mat-label>
-          <input matInput>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Email</mat-label>
-          <input matInput>
-        </mat-form-field>
-  
-        <mat-form-field appearance="fill">
-          <mat-label>Phone Number</mat-label>
-          <input matInput>
-        </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput #email>
+          </mat-form-field>
+          
+          <mat-form-field appearance="fill">
+            <mat-label>Phone Number</mat-label>
+            <input matInput #phone>
+          </mat-form-field>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <button type="submit" class="btn btn-success" mat-button (click)="save(firstName.value,lastName.value,skyMiles.value,address.value,email.value,phone.value)">Save</button>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <button mat-stroked-button color="primary" (click)="addPassengers()">Add More Passengers</button>
+            </div>
+          </div>
+        </div>
+        <ng-container *ngIf="isAddMorePassengers">
+           <p>Passenger {{passengerCounter}}<p></p>
+                    <mat-form-field appearance="fill">
+                      <mat-label>Name</mat-label>
+                      <input matInput #firstName>
+                    </mat-form-field>
+              
+                    <mat-form-field appearance="fill">
+                      <mat-label>Gender</mat-label>
+                      <input matInput #lastName>
+                    </mat-form-field>
+              
+                    <mat-form-field appearance="fill">
+                      <mat-label>Sky Miles Number</mat-label>
+                      <input matInput #skyMiles>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                      <mat-label>Address</mat-label>
+                      <input matInput #address>
+                    </mat-form-field>
+            
+                    <mat-form-field appearance="fill">
+                      <mat-label>Email</mat-label>
+                      <input matInput #email>
+                    </mat-form-field>
+                    
+                    <mat-form-field appearance="fill">
+                      <mat-label>Phone Number</mat-label>
+                      <input matInput #phone>
+                    </mat-form-field>
+                  <button type="submit" class="btn btn-success" mat-button (click)="save(firstName.value,lastName.value,skyMiles.value,address.value,email.value,phone.value)">Save</button>
+          </ng-container>
     
         <mat-action-row>
           <button mat-button color="warn" (click)="prevStep()">Previous</button>
@@ -149,8 +188,8 @@
                               [checked]="allComplete"
                               [color]="black">
                   <!-- {{ssrFields[i].ssr}} -->
-                </mat-checkbox> 
-                <mat-icon svgIcon='{{ssrFields[i].ssr}}' matTooltip="{{ssrFields[i].description}}"  matTooltipClass="my-tooltip"></mat-icon><br>
+                </mat-checkbox> &nbsp;
+                <mat-icon style="transform: translateY(-5px);" svgIcon='{{ssrFields[i].ssr}}' matTooltip="{{ssrFields[i].description}}"  matTooltipClass="my-tooltip"></mat-icon><br>
               <!-- </span> -->
             <!-- <label for="filterFields[i].SSR">{{filterFields[i].SSR}}</label>
             <input id="filterFields[i].SSR" type="text" [formControlName]="filterFields[i].SSR"> -->

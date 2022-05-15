@@ -29,6 +29,9 @@ export class BookingFormComponent implements OnInit {
   currentUser: login;
   passengerDetails:Array<passenger>
   ssrFields:staticSSR[]=[];
+  isAddMorePassengers=false;
+  passengerCounter=1;
+  coPassengerInfo:passenger;
 
   // this.passengerDetails=data.filter(user => user.smId.localeCompare(this.currentUser.ssm) === 0)
   setStep(index: number) {
@@ -99,5 +102,16 @@ export class BookingFormComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
     });
     return false;
+  }
+  addPassengers(){
+    this.isAddMorePassengers=true;
+    this.passengerCounter++;
+  }
+  save(name:String,gender:String,skyMiles:String,
+       address:String,email:String,phone:String){
+    this.coPassengerInfo={smId:skyMiles,gender:gender,name:name,
+      dob:new Date('10/05/1992'),address:address,email:email,phone:phone}
+      this.isAddMorePassengers=false;
+    console.log(this.coPassengerInfo)
   }
 }
