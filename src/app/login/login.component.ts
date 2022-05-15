@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { AuthenticationService } from '../service/authentication.service';
 import { LoginService } from '../service/login.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
@@ -16,7 +17,8 @@ export class LoginComponent implements OnInit {
   private route: ActivatedRoute;
   constructor(private loginservice: LoginService,
               private fb: FormBuilder,
-              private router: Router) {
+              private router: Router,
+              private authService: AuthenticationService) {
   }
 
   username = '';
@@ -40,6 +42,7 @@ export class LoginComponent implements OnInit {
         Swal.fire('Invalid Username', 'Check your Input', 'error');
       } else {
         if (data[0].password.localeCompare(password) === 0) {
+          this.authService.login(data[0]);
           Swal.fire('Successfully Logged In as: ' , username, 'success');
           this.loading = false;
           this.router.navigateByUrl('home');

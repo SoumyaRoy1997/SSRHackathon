@@ -1,0 +1,177 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+<div class="col-md-8">
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Provide your personal details
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>First name</mat-label>
+        <input matInput [ngModel]="currentUser.name">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Last name</mat-label>
+        <input matInput>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>DOB</mat-label>
+        <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      
+
+      <mat-form-field appearance="fill">
+        <mat-label>Sky Miles Number</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Phone Number</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-action-row>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Destination
+        </mat-panel-title>
+        <mat-panel-description>
+          Type the country name
+          <mat-icon>map</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Country</mat-label>
+        <input matInput>
+      </mat-form-field>
+  
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">Next</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  
+    <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Passenger Details
+          </mat-panel-title>
+          <mat-panel-description>
+            Type the passenger information
+            <mat-icon>account_circle</mat-icon>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+    
+        <mat-form-field appearance="fill">
+          <mat-label>First name</mat-label>
+          <input matInput [ngModel]="currentUser.name">
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Last name</mat-label>
+          <input matInput>
+        </mat-form-field>
+    
+        <mat-form-field appearance="fill">
+          <mat-label>DOB</mat-label>
+          <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Sky Miles Number</mat-label>
+          <input matInput>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput>
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+          <input matInput>
+        </mat-form-field>
+    
+        <mat-action-row>
+          <button mat-button color="warn" (click)="prevStep()">Previous</button>
+          <button mat-button color="primary" (click)="nextStep()">Next</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Special Service Request
+        </mat-panel-title>
+        <mat-panel-description>
+          Any Special Request that you would like to be accomodated
+          <mat-icon>miscellaneous_services</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <section class="example-section">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-4"></div>
+                  <div class="col-md-4">
+                    Recomended SSR's
+                  </div>
+                  <div class="col-md-4"></div>
+              </div>
+          </div>
+        <ng-template ngFor let-item [ngForOf]="ssrFields" let-i="index" >
+            <!-- <span *ngIf="!ssrFields[i].paid" class="example-list-section"> -->
+                <mat-checkbox class="example-margin"
+                              [checked]="allComplete"
+                              [color]="black">
+                  <!-- {{ssrFields[i].ssr}} -->
+                </mat-checkbox> 
+                <mat-icon svgIcon='{{ssrFields[i].ssr}}' matTooltip="{{ssrFields[i].description}}"  matTooltipClass="my-tooltip"></mat-icon><br>
+              <!-- </span> -->
+            <!-- <label for="filterFields[i].SSR">{{filterFields[i].SSR}}</label>
+            <input id="filterFields[i].SSR" type="text" [formControlName]="filterFields[i].SSR"> -->
+          </ng-template>
+          </section>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8"></div>
+              <div class="col-md-2"></div>
+              <div class="col-md-2">
+                  <a href (click)="openSsrForm()">show more...</a>
+              </div>
+          </div>
+      </div>
+      <mat-action-row>
+        <button mat-button color="warn" (click)="prevStep()">Previous</button>
+        <button mat-button color="primary" (click)="nextStep()">End</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<div class="col-md-2"></div>
+</div>
+</div>

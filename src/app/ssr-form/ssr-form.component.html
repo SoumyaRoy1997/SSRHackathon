@@ -1,4 +1,4 @@
-<p>Hi User!</p>
+<p>Hi {{currentUser.name}}</p>
 <p>You have selected these SSR's</p>
 <mat-tab-group dynamicHeight>
   <mat-tab label="Unpaid Special Service Requests">
@@ -9,11 +9,11 @@
     <form [formGroup]="ssrForm">
       <section class="example-section">
       <ng-template ngFor let-item [ngForOf]="filterFields" let-i="index" >
-          <span class="example-list-section">
+          <span *ngIf="!filterFields[i].isPaid" class="example-list-section">
               <mat-checkbox class="example-margin"
                             [checked]="allComplete"
                             [color]="black">
-                {{filterFields[i].ssrcode}}
+                {{filterFields[i].ssr}}
               </mat-checkbox><br>
             </span>
           <!-- <label for="filterFields[i].SSR">{{filterFields[i].SSR}}</label>
@@ -25,10 +25,10 @@
       </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-       <!-- <button mat-button class="btn btn-success" color="accent" cdkFocusInitial (click)="AddItem()">Add Items</button>
-       <button mat-button *ngIf="isEditItems || isAddItem" (click)="cancel()" class="btn btn-warning" color="primary" >Cancel</button>
-       <button mat-button mat-dialog-close class="btn btn-danger" color="primary" >Quit</button> -->
+  <button mat-button mat-dialog-close class="btn btn-danger" color="primary" >Quit</button>
 </mat-dialog-actions>
+<br>
+<mat-progress-bar [mode]="progressMode"></mat-progress-bar>
 </div>
   </mat-tab>
   <mat-tab label="Premium Special Service Requests">
@@ -39,11 +39,11 @@
     <form [formGroup]="ssrForm">
       <section class="example-section">
       <ng-template ngFor let-item [ngForOf]="filterFields" let-i="index" >
-          <span class="example-list-section">
+          <span *ngIf="filterFields[i].isPaid" class="example-list-section">
               <mat-checkbox class="example-margin"
                             [checked]="allComplete"
                             [color]="black">
-                {{filterFields[i].ssrcode}}
+                {{filterFields[i].ssr}}
               </mat-checkbox><br>
             </span>
           <!-- <label for="filterFields[i].SSR">{{filterFields[i].SSR}}</label>
@@ -55,10 +55,11 @@
       </div>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
-       <!-- <button mat-button class="btn btn-success" color="accent" cdkFocusInitial (click)="AddService()">Add Items</button>
-       <button mat-button *ngIf="isEditService || isAddservice" (click)="cancel()" class="btn btn-warning" color="warn" >Cancel</button>
-       <button mat-button mat-dialog-close class="btn btn-danger" color="primary" >Quit</button> -->
+    <button mat-button mat-dialog-close class="btn btn-danger" color="primary" >Quit</button>
   </mat-dialog-actions>
   </div>
+  <br>
+  <mat-progress-bar [mode]="progressMode"></mat-progress-bar>
   </mat-tab>
+  
 </mat-tab-group>

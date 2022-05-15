@@ -1,0 +1,8 @@
+[
+    {
+        "ssr":"CHLD",
+        "description":"Passenger is a child. Required on all flights. Ages 2-14 on DL, Ages 2-12 on OAL. Include Date of Birth.",
+        "docReq":false,
+        "isPaid":false
+        }
+]

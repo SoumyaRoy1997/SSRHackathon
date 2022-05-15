@@ -3,7 +3,7 @@ $imageUrl: "../assets/images/background.jpg";
 $myimageUrl: "../../assets/images/background.jpg";
 $imageUrlHeader: "../../../assets/images/background.jpg";
 $myWidth: 100%;
-$myheight: 10%;
+$myheight: 100%;
 $color: #ddd;
 
 .my-tooltip {
@@ -54,9 +54,8 @@ $color: #ddd;
 }
 
 @mixin _backGroundImage() {
-    width: $myWidth;
     height: $myheight;
-    overflow: visible;
+    overflow: auto;
     background: {
       position: center;
       repeat: no-repeat;

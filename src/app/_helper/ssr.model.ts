@@ -1,7 +1,7 @@
-import { pasenger } from "./pasenger.model";
+import { passenger } from "./passenger.model";
 
 export interface ssr{
     name:String
     email:String
-    pasengerList:Array<pasenger>
+    pasengerList:Array<passenger>
 }

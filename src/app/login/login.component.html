@@ -1,3 +1,4 @@
+<div class="bg-image">
 <mat-spinner *ngIf="loading"  backdropEnabled="true" positionGloballyCenter="true"></mat-spinner>
 <mat-card *ngIf="!loading">
     <mat-card-content>
@@ -7,9 +8,14 @@
           The username and password were not recognised
         </mat-error>
             
-        <ng-template *ngIf="">
-
-        </ng-template>
+        <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput #username placeholder="username" class="mdc-floating-label" id="my-label-id" aria-invalid="false" aria-required="true" >
+            <!-- <mat-error *ngIf="loginForm.hasError('required')">
+              Password<strong>required</strong>
+            </mat-error> -->
+           
+         </mat-form-field>
           
             <mat-form-field appearance="outline">
                     <mat-label>passowrd</mat-label>
@@ -28,4 +34,4 @@
       </form>
     </mat-card-content>
   </mat-card>
- 
+ </div>

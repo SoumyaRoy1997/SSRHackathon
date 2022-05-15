@@ -6,7 +6,7 @@ import {Component, ViewChild, OnInit, Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {Flights} from '../_helper/flight.model'
-import { FirebaseService } from '../service/firebase.service';
+import { FlightService } from '../service/flight.service';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { stringify } from '@angular/compiler/src/util';
@@ -25,21 +25,18 @@ export class HomeLayoutComponent implements OnInit {
   resultsLength = 0;
   filteredresultsLength = 0;
   isLoadingResults = true;
-  fliteredFlight: Flights[];
-  filter = true;
   flightID = [];
   serviceList = [];
-  barchart = [];
   currentDate = new Date();
-  today: string;
   dataSource : any
   exampleData = new String( "" );
   counter =0;
+  progressMode="indeterminate"
  
   constructor(private router: Router,
               public dialog: MatDialog,
               private snackBar: MatSnackBar,
-              private firebaseService: FirebaseService,
+              private firebaseService: FlightService,
               private route:Router,
               private activatedRoute:ActivatedRoute,
               private matIconRegistry: MatIconRegistry,
@@ -81,23 +78,19 @@ export class HomeLayoutComponent implements OnInit {
             this.isLoadingResults = false;
             this.dataSource.sort = this.sort;
             this.dataSource.paginator = this.paginator;
+            this.progressMode="determinate";
           });
   }
 
     routeSsr(){
       this.route.navigate(['./ssr-form'],{relativeTo: this.activatedRoute});
     }
-
-    openSsrForm() {
-      const dialogRef = this.dialog.open(SsrFormComponent, {
-        width: 'auto',
-        data: {
-                flight:""
-             }});
-  
-      dialogRef.afterClosed().subscribe(result => {
-      });
+    booking(){
+      console.log("Hi")
+      this.route.navigate(['./booking'],{relativeTo: this.activatedRoute});
     }
+
+    
   }
   
 

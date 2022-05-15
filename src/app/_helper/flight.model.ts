@@ -7,7 +7,7 @@ export interface Flights {
     arrival: string;
     destination: string;
     pickup: string;
-    passengers: number;
     specialservice: specialservice[];
     serviceList?:string
   }
+  

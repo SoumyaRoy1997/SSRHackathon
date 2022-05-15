@@ -1,8 +1,13 @@
 <div class="header">
+    <div class="container">
+        <div class="row">
 <div class="col-md-2">
 </div>
-<div class="col-md-8" >
-    Book Flights
+<div class="col-md-8" >Book Flights</div>
+<div class="col-md-2">
+    <button *ngIf="authenticated" mat-stroked-button color="primary" (click)="logoutUser()">Sign Out</button>
+    <button *ngIf="!authenticated" mat-stroked-button color="primary" [routerLink]="['/login']">Sign In</button>
 </div>
-<div class="col-md-2"></div>
+</div>
+</div>
 </div>

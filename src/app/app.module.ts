@@ -14,6 +14,8 @@ import {AngularFireModule} from 'angularfire2';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import {LoginModule} from './login/login.module';
+import { LoginService } from './service/login.service';
+import { AuthenticationService } from './service/authentication.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import {LoginModule} from './login/login.module';
     AngularFireModule.initializeApp(environment.firebaseconfig, 'flight-app'),
     BrowserAnimationsModule
   ],
-  providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' }}],
+  providers: [{ provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' }},
+  LoginService,AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

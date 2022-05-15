@@ -2,12 +2,12 @@ export interface staticSSR{
     
     "id": number,
     "airline": string,
-    "ssrcode": string,
+    "ssr": string,
     "Dependency_parameter": string,
     "criteria": string,
-    "Description": string,
-    "Doc_Required": boolean,
-    "Paid": boolean,
+    "description": string,
+    "docReq": boolean,
+    "isPaid": boolean,
     "Remarks": string
       
 }

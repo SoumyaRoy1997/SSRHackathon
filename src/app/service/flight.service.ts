@@ -8,7 +8,7 @@ import {AngularFirestore, AngularFirestoreDocument, AngularFirestoreCollection ,
 @Injectable({
   providedIn: 'root'
 })
-export class FirebaseService {
+export class FlightService {
   flightCollection: AngularFirestoreCollection<Flights>;
   flightDoc: AngularFirestoreDocument<Flights>;
   Allflights: Observable<Flights[]>;

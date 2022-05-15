@@ -1,0 +1,35 @@
+[{
+    "skymiles": [
+    "5482910151",
+    "2037541869"
+    ],
+    "passengerInfo": [
+    {
+    "smId": "5482910151",
+    "name": "Raaghul",
+    "dob": "12-12-1995",
+    "gender": "M",
+    "address": "Chennai",
+    "phone": "XXXXX98",
+    "email": "test@gmail.com"
+    },
+    {
+    "smId": "2037541869",
+    "name": "Sam",
+    "dob": "12-12-2012",
+    "gender": "M",
+    "address": "Chennai",
+    "phone": "XXX78",
+    "email": "test2@gmail.com"
+    }
+    ],
+    "FlightInfo": [
+    {
+    "origin": "ATL",
+    "destination": "MSP",
+    "carrier": "DL",
+    "travelDate": "15-06-2022",
+    "flightNo": "DL2847"
+    }
+    ]
+    }]
