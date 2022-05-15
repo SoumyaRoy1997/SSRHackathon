@@ -16,32 +16,32 @@
   
       <mat-form-field appearance="fill">
         <mat-label>Name</mat-label>
-        <input matInput #firstName>
+        <input matInput #nameMain>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Gender</mat-label>
-        <input matInput #lastName>
+        <input matInput #genderMain>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Sky Miles Number</mat-label>
-        <input matInput #skyMiles>
+        <input matInput #skyMilesMain>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Address</mat-label>
-        <input matInput #address>
+        <input matInput #addressMain>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Email</mat-label>
-        <input matInput #email>
+        <input matInput #emailMain>
       </mat-form-field>
       
       <mat-form-field appearance="fill">
         <mat-label>Phone Number</mat-label>
-        <input matInput #phone>
+        <input matInput #phoneMain>
       </mat-form-field>
       <mat-action-row>
         <button mat-button color="primary" (click)="nextStep()">Next</button>
@@ -80,14 +80,33 @@
             <mat-icon>account_circle</mat-icon>
           </mat-panel-description>
         </mat-expansion-panel-header>
+        <table class="table table-striped" *ngIf="passengerAdded">
+          <thead>
+           <tr>
+            <th>Sl No.</th>
+           <th>Passenger Name</th>
+           </tr>
+          </thead>
+          <ng-container>
+          <tbody>
+          <ng-template ngFor let-item [ngForOf]="passengerDetails" let-i="index">
+          <tr >
+          <td>{{i+1}}</td>
+          <td>{{passengerDetails[i].name}}</td>
+          </tr>
+          </ng-template>
+         </tbody>
+         </ng-container>
+         </table>
+        <ng-container *ngIf="!passengerAdded" class="form-group">
         <mat-form-field appearance="fill">
             <mat-label>Name</mat-label>
-            <input matInput #firstName>
+            <input matInput #name>
           </mat-form-field>
     
           <mat-form-field appearance="fill">
             <mat-label>Gender</mat-label>
-            <input matInput #lastName>
+            <input matInput #gender>
           </mat-form-field>
     
           <mat-form-field appearance="fill">
@@ -109,15 +128,15 @@
             <mat-label>Phone Number</mat-label>
             <input matInput #phone>
           </mat-form-field>
-
+        </ng-container>
         <div class="container">
           <div class="row">
             <div class="col-md-4">
-              <button type="submit" class="btn btn-success" mat-button (click)="save(firstName.value,lastName.value,skyMiles.value,address.value,email.value,phone.value)">Save</button>
+              <button type="submit" *ngIf="submitted" class="btn btn-success" mat-button (click)="save(skyMiles.value,gender.value,name.value,address.value,email.value,phone.value)">Save</button>
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-4">
-              <button mat-stroked-button color="primary" (click)="addPassengers()">Add More Passengers</button>
+              <button *ngIf="isDisabled" mat-stroked-button color="primary" (click)="addPassengers()">Add More Passengers</button>
             </div>
           </div>
         </div>
@@ -125,12 +144,12 @@
            <p>Passenger {{passengerCounter}}<p></p>
                     <mat-form-field appearance="fill">
                       <mat-label>Name</mat-label>
-                      <input matInput #firstName>
+                      <input matInput #name>
                     </mat-form-field>
               
                     <mat-form-field appearance="fill">
                       <mat-label>Gender</mat-label>
-                      <input matInput #lastName>
+                      <input matInput #gender>
                     </mat-form-field>
               
                     <mat-form-field appearance="fill">
@@ -152,7 +171,7 @@
                       <mat-label>Phone Number</mat-label>
                       <input matInput #phone>
                     </mat-form-field>
-                  <button type="submit" class="btn btn-success" mat-button (click)="save(firstName.value,lastName.value,skyMiles.value,address.value,email.value,phone.value)">Save</button>
+                    <button type="submit" *ngIf="submitted" class="btn btn-success" mat-button (click)="save(skyMiles.value,gender.value,name.value,address.value,email.value,phone.value)">Save</button>
           </ng-container>
     
         <mat-action-row>

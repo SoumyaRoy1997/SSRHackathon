@@ -27,25 +27,33 @@ export class BookingFormComponent implements OnInit {
   ssrForm = this.fb.group({});
   step = 0;
   currentUser: login;
-  passengerDetails:Array<passenger>
+  passengerDetails:passenger[] = [];
   ssrFields:staticSSR[]=[];
   isAddMorePassengers=false;
   passengerCounter=1;
   coPassengerInfo:passenger;
+  submitted=true;
+  isDisabled=false;
+  passengerAdded=0;
 
   // this.passengerDetails=data.filter(user => user.smId.localeCompare(this.currentUser.ssm) === 0)
   setStep(index: number) {
     this.step = index;
     if(index == 2){
-      this.bookingService.getRecomendedSsr(this.currentUser.ssm).subscribe(data=>{
-        console.log(data)
-        this.filterFields = data;
-        this.filterFields.forEach(field => {
-          this.ssrForm.addControl(field.ssrcode, new FormControl(""));
-          this.ssrFields.push(field);        
-        }
-        );
-    })
+    //   this.bookingService.getRecomendedSsr(this.currentUser.ssm).subscribe(data=>{
+    //     console.log(data)
+    //     this.filterFields = data;
+    //     this.filterFields.forEach(field => {
+    //       this.ssrForm.addControl(field.ssrcode, new FormControl(""));
+    //       this.ssrFields.push(field);        
+    //     }
+    //     );
+    // })
+    this.filterFields=this.bookingService.getRecomendedSsr(this.currentUser.ssm)
+    this.filterFields.forEach(field => {
+             this.ssrForm.addControl(field.ssrcode, new FormControl(""));
+             this.ssrFields.push(field);        
+           })
   }
   }
 
@@ -109,9 +117,16 @@ export class BookingFormComponent implements OnInit {
   }
   save(name:String,gender:String,skyMiles:String,
        address:String,email:String,phone:String){
+    if(!this.isAddMorePassengers){
+      this.isDisabled=true
+      // this.isAddMorePassengers=!this.isAddMorePassengers
+    }
+    this.submitted=false;
     this.coPassengerInfo={smId:skyMiles,gender:gender,name:name,
       dob:new Date('10/05/1992'),address:address,email:email,phone:phone}
-      this.isAddMorePassengers=false;
     console.log(this.coPassengerInfo)
+    this.passengerAdded=1;
+    this.passengerDetails.push(this.coPassengerInfo);
+    console.log(this.passengerDetails)
   }
 }
