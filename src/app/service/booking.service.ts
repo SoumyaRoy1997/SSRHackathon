@@ -10,26 +10,30 @@ export class BookingService {
 
   getURL="https://g8kxdeq7a3-vpce-091b00ee6ad77a151.execute-api.us-east-1.amazonaws.com/dev/flyhigh-demo-apis/getsuggestions";
   postURL="https://g8kxdeq7a3-vpce-091b00ee6ad77a151.execute-api.us-east-1.amazonaws.com/dev/flyhigh-demo-apis/addhistory"
-  sampleURL="https://atm9u4va07.execute-api.us-east-1.amazonaws.com/dev/getssrfromsm?smId=8000000001"
+  sampleURL="https://ibac0vo2vf-vpce-091b00ee6ad77a151.execute-api.us-east-1.amazonaws.com/dev/getssrsuggestion?smId=2037541869"
+  
   constructor(private httpClient: HttpClient) { }
 
 
   getPassengerHistory(ssm: string){
     return this.httpClient.get<passenger[]>('assets/passenger-history-data.json');
   }
-  async getRecomendedSsr(ssm: string){
-    ssm='5482910151';
-    
-    const requestArray=JSON.stringify({"skymiles":["5482910151"]})
+  getRecomendedSsr(ssm: string){
+    const requestArray=JSON.stringify({"skymiles":[ssm]})
     const headers = {'Content-Type': 'application/json'};
     let respone
-    // return this.httpClient.get(this.sampleURL);
-    await this.httpClient.post(this.getURL
-    ,requestArray,{headers}).toPromise().then(value=>{
-      console.log(value)
-      respone=value
+    return this.httpClient.get(this.sampleURL);
+    // return this.httpClient.post(this.getURL
+    // ,requestArray,{headers})
+  }
+
+  postData(request:any){
+    const requestArray=request
+    const headers = {'Content-Type': 'application/json'};
+    let respone
+    return this.httpClient.post(this.postURL
+    ,requestArray,{headers}).subscribe(data=>{
+      console.log(data)
     })
-    return respone
-    // return this.httpClient.get<staticSSR[]>('assets/ssr-response-data.json');
   }
 }

@@ -12,7 +12,7 @@
           <span *ngIf="!filterFields[i].isPaid" class="example-list-section">
               <mat-checkbox class="example-margin"
                             [checked]="allComplete"
-                            [color]="black">
+                            [color]="black" (click)="addSsr(filterFields[i].ssr)">
                 {{filterFields[i].ssr}}
               </mat-checkbox><br>
             </span>
@@ -25,6 +25,7 @@
       </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
+  <button mat-button class="btn btn-success" [mat-dialog-close]="ssrList" cdkFocusInitial color="accent">Add</button>
   <button mat-button mat-dialog-close class="btn btn-danger" color="primary" >Quit</button>
 </mat-dialog-actions>
 <br>
@@ -42,7 +43,7 @@
           <span *ngIf="filterFields[i].isPaid" class="example-list-section">
               <mat-checkbox class="example-margin"
                             [checked]="allComplete"
-                            [color]="black">
+                            [color]="black" (click)="addSsr(filterFields[i].ssr)">
                 {{filterFields[i].ssr}}
               </mat-checkbox><br>
             </span>
@@ -55,6 +56,7 @@
       </div>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
+    <button mat-button class="btn btn-success" [mat-dialog-close]="ssrList" cdkFocusInitial color="accent">Add</button>
     <button mat-button mat-dialog-close class="btn btn-danger" color="primary" >Quit</button>
   </mat-dialog-actions>
   </div>

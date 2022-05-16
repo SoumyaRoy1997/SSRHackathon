@@ -5,5 +5,6 @@ export interface passenger{
    "gender": String,
    "address": String,
    "phone": String,
-   "email": String
+   "email": String,
+   "ssr": Array<String>
 }

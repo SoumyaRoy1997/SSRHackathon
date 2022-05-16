@@ -17,6 +17,7 @@ export class SsrFormComponent implements OnInit {
   ssrForm = this.fb.group({});
   currentUser: login;
   progressMode="indeterminate"
+  ssrList:String[]=[];
   
   // ssrForm = new FormGroup({
   //   SSR: new FormControl(''),
@@ -49,7 +50,9 @@ export class SsrFormComponent implements OnInit {
     console.log(this.ssrForm);
     return this.ssrForm;
   }
-
+  addSsr(ssrValue:String){
+    this.ssrList.push(ssrValue);
+  }
 
 }
 
