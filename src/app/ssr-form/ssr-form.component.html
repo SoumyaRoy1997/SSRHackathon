@@ -1,5 +1,5 @@
 <p>Hi {{currentUser.name}}</p>
-<p>You have selected these SSR's</p>
+<p>You can select from the catalog of SSR's</p>
 <mat-tab-group dynamicHeight>
   <mat-tab label="Unpaid Special Service Requests">
   <div class="dialog">
@@ -12,7 +12,7 @@
           <span *ngIf="!filterFields[i].isPaid" class="example-list-section">
               <mat-checkbox class="example-margin"
                             [checked]="allComplete"
-                            [color]="black" (click)="addSsr(filterFields[i].ssr)">
+                            [color]="black" (click)="addSsr(filterFields[i].ssr)" matTooltip="{{filterFields[i].description}}">
                 {{filterFields[i].ssr}}
               </mat-checkbox><br>
             </span>
@@ -43,7 +43,7 @@
           <span *ngIf="filterFields[i].isPaid" class="example-list-section">
               <mat-checkbox class="example-margin"
                             [checked]="allComplete"
-                            [color]="black" (click)="addSsr(filterFields[i].ssr)">
+                            [color]="black" (click)="addSsr(filterFields[i].ssr)" matTooltip="{{filterFields[i].description}}">
                 {{filterFields[i].ssr}}
               </mat-checkbox><br>
             </span>

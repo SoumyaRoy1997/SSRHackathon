@@ -240,5 +240,26 @@
       "docReq": false,
       "isPaid": false,
       "Remarks": "null"
-    }
+    },
+    {
+      "id": 24,
+      "ssr": "BLND",
+      "airline": "DL",
+      "criteria": "null",
+      "Dependency_parameter": "null",
+      "description": "Blind Passenger",
+      "docReq": false,
+      "isPaid": false,
+      "Remarks": "null"
+      },{
+        "id": 25,
+        "ssr": "DEAF",
+        "airline": "DL",
+        "criteria": "null",
+        "Dependency_parameter": "null",
+        "description": "Deaf Passenger",
+        "docReq": false,
+        "isPaid": false,
+        "Remarks": "null"
+        }
   ]

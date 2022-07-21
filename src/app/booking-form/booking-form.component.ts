@@ -10,6 +10,7 @@ import { SsrFormComponent } from '../ssr-form/ssr-form.component';
 import { login } from '../_helper/login.model';
 import {passenger} from '../_helper/passenger.model';
 import { staticSSR } from '../_helper/staticSSR.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-booking-form',
@@ -61,13 +62,12 @@ export class BookingFormComponent implements OnInit {
     this.step = index;
     if(index == 1){
       this.bookingService.getRecomendedSsr(this.currentUser.ssm).subscribe(data=>{
-        console.log(data)
         this.filterFields = data;
         this.filterFields.forEach(field => {
           this.ssrForm.addControl(field.ssrcode, new FormControl(""));
           this.ssrFields.push(field);        
-        }
-        );
+        });
+        console.log(this.ssrFields)
     })
     // this.filterFields=this.bookingService.getRecomendedSsr(this.currentUser.ssm)
     // this.filterFields.forEach(field => {
@@ -81,13 +81,19 @@ export class BookingFormComponent implements OnInit {
   nextStep() {
     this.step++;
     if(this.step == 3){
-      const requestObject = JSON.stringify({"smId":this.currentUser.ssm,
-                                            "pnrInfo":JSON.stringify({"pnr":(Math.random().toString(36).substr(2, 6)).toUpperCase(),"passengerInfo":this.passengerDetails,"flightInfo":this.flightInfo}),
+      //const requestObject = JSON.stringify({"smId":this.currentUser.ssm,
+        //                                    "pnrInfo":JSON.stringify({"pnr":(Math.random().toString(36).substr(2, 6)).toUpperCase(),"passengerInfo":this.passengerDetails,"flightInfo":this.flightInfo}),
+          //                                  "skymiles":this.skyMilesList
+          //                                })
+          const requestObject = JSON.stringify({"smId":this.currentUser.ssm,
+                                              "pnrInfo":{"pnr":(Math.random().toString(36).substr(2, 6)).toUpperCase(),"passengerInfo":this.passengerDetails,"flightInfo":this.flightInfo},
                                             "skymiles":this.skyMilesList
-                                          })
-    
+                                        })
     console.log(requestObject);
-                                          this.bookingService.postData(requestObject);                                       
+    //Swal.fire(this.currentUser.name,'Your Ticket has been created successfully ', 'success');
+                                          this.bookingService.postData(requestObject).subscribe(data=>{
+                                            Swal.fire(this.currentUser.name,'Your Ticket has been created successfully ', 'success');
+                                          });                                       
     }
     
   }
@@ -107,6 +113,10 @@ export class BookingFormComponent implements OnInit {
                   this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/images/chld.svg')
                 );
                 this.matIconRegistry.addSvgIcon(
+                  'DIPB',
+                  this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/images/DIPB.svg')
+                );
+                this.matIconRegistry.addSvgIcon(
                   'INFT',
                   this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/images/inft.svg')
                 );
@@ -124,6 +134,10 @@ export class BookingFormComponent implements OnInit {
                 );
                 this.matIconRegistry.addSvgIcon(
                   'FQTS',
+                  this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/images/fqts.svg')
+                );
+                this.matIconRegistry.addSvgIcon(
+                  'FQTR',
                   this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/images/fqts.svg')
                 );
                 this.matIconRegistry.addSvgIcon(

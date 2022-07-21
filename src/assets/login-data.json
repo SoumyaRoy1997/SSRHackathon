@@ -1,23 +1,47 @@
 [{
-    "name":"Soumya Roy",
+    "name":"Fly High Member A",
     "email": "soumya111997roy@gmail.com",
     "password":"12345",
     "ssm":"5482910151"
 },{
-    "name":"Soumya Roy",
+    "name":"Fly High Member A",
     "email": "flyHigh1@gmail.com",
     "password":"12345",
     "ssm":"2037541869"
 },
 {
-    "name":"Soumya Roy",
+    "name":"Fly High Member A",
     "email": "flyHigh2@gmail.com",
     "password":"12345",
     "ssm":"7807362529"
 },
 {
-    "name":"Soumya Roy",
+    "name":"Fly High Member A",
     "email": "flyHigh3@gmail.com",
     "password":"12345",
-    "ssm":"4322936804"
+    "ssm":"4322936806"
+},
+{
+    "name":"Fly High Member B",
+    "email": "flyHigh4@gmail.com",
+    "password":"12345",
+    "ssm":"4322936805"
+},
+{
+    "name":"Fly High Member D",
+    "email": "flyHigh5@gmail.com",
+    "password":"12345",
+    "ssm":"4322936808"
+},
+{
+    "name":"Fly High Member E",
+    "email": "flyHigh6@gmail.com",
+    "password":"12345",
+    "ssm":"4322936809"
+},
+{
+    "name":"Fly High Member G",
+    "email": "flyHigh7@gmail.com",
+    "password":"12345",
+    "ssm":"4322936811"
 }]

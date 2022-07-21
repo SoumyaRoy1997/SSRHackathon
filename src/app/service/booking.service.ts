@@ -10,8 +10,10 @@ export class BookingService {
 
   getURL="https://g8kxdeq7a3-vpce-091b00ee6ad77a151.execute-api.us-east-1.amazonaws.com/dev/flyhigh-demo-apis/getsuggestions";
   postURL="https://g8kxdeq7a3-vpce-091b00ee6ad77a151.execute-api.us-east-1.amazonaws.com/dev/flyhigh-demo-apis/addhistory"
-  sampleURL="https://ibac0vo2vf-vpce-091b00ee6ad77a151.execute-api.us-east-1.amazonaws.com/dev/getssrsuggestion?smId=2037541869"
-  
+  sampleURL="https://ibac0vo2vf-vpce-091b00ee6ad77a151.execute-api.us-east-1.amazonaws.com/dev/getssrsuggestion?smId="
+  getDemoURL="https://atm9u4va07.execute-api.us-east-1.amazonaws.com/dev/getssrfromsm?smId="
+  //postDemoURL="https://c4806y03wl.execute-api.us-east-1.amazonaws.com/default/flyhigh-demo-apis/addhistory"
+  postDemoURL="https://atm9u4va07.execute-api.us-east-1.amazonaws.com/dev/postssr"
   constructor(private httpClient: HttpClient) { }
 
 
@@ -22,7 +24,8 @@ export class BookingService {
     const requestArray=JSON.stringify({"skymiles":[ssm]})
     const headers = {'Content-Type': 'application/json'};
     let respone
-    return this.httpClient.get(this.sampleURL);
+    //return this.httpClient.get(this.sampleURL+ssm);
+    return this.httpClient.get(this.getDemoURL+ssm);
     // return this.httpClient.post(this.getURL
     // ,requestArray,{headers})
   }
@@ -31,9 +34,7 @@ export class BookingService {
     const requestArray=request
     const headers = {'Content-Type': 'application/json'};
     let respone
-    return this.httpClient.post(this.postURL
-    ,requestArray,{headers}).subscribe(data=>{
-      console.log(data)
-    })
+    return this.httpClient.post(this.postDemoURL
+    ,requestArray,{headers})
   }
 }
